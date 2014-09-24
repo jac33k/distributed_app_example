@@ -1,7 +1,6 @@
 class MessagesController < ApplicationController
 
-  def show
-    render 'index'
+  def index
   end
 
   def create
