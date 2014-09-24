@@ -1,1 +1,17 @@
-hello
+%h2 Invite your friend!
+
+.container
+  = form_tag({}, class: 'form-horizontal', role: 'form') do
+    .form-group
+      = label_tag(:name, 'Name:', class: 'col-sm-2 control-label')
+      .col-sm-10
+        = text_field_tag :name, nil, class: 'form-control'
+
+    .form-group
+      = label_tag(:email, 'Email:', class: 'col-sm-2 control-label')
+      .col-sm-10
+        = text_field_tag :email, nil, class: 'form-control'
+
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        = submit_tag 'Send', class: 'btn btn-default'
