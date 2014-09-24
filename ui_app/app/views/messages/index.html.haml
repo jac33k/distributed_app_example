@@ -1,0 +1,16 @@
+%h2 Send a message!
+
+.container
+  = form_tag({}, class: 'form-horizontal', role: 'form') do
+    .form-group
+      = label_tag(:recipient, 'Recipient number:', class: 'col-sm-2 control-label')
+      .col-sm-10
+        = text_field_tag :recipient, nil, class: 'form-control'
+
+    .form-group
+      = label_tag(:body, 'Message body:', class: 'col-sm-2 control-label')
+      .col-sm-10
+        = text_area_tag :body, nil, class: 'form-control'
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        = submit_tag 'Send', class: 'btn btn-default'
