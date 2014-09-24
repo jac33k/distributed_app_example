@@ -5,7 +5,7 @@ class SmsDeliver
 
   def initialize(opts = {})
     @options = opts
-    @message = Message.new(@options.fetch(:recipient), @options.fetch(:body))
+    @message = Message.new(@options.fetch('recipient'), @options.fetch('body'))
   end
 
   def call
