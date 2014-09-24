@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
 
   def create
     SmsSend.new(message_params).call
+    flash[:notice] = "Message has been sent!"
     redirect_to messages_url
   end
 
