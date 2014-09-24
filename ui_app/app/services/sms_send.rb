@@ -1,27 +1,8 @@
-class SmsSend
-
-  def initialize(opts = {})
-    @options = opts.to_hash
-  end
-
-  def call
-    conn.start
-
-    channel.default_exchange.publish(Marshal.dump(@options), routing_key: queue.name)
-
-    conn.close
-  end
+class SmsSend < Base
 
   private
-  def conn
-    @conn ||= Bunny.new(automatically_recover: false)
-  end
 
-  def channel
-    @channel ||= conn.create_channel
-  end
-
-  def queue
-    @queue ||= channel.queue("sms_app")
+  def queue_name
+    "sms_app"
   end
 end
